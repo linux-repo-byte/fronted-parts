@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 boba-font">
-            Too Lazy to Cook?
+            Too Lazy to Prep?
             <br />
             <span className="text-[#A8B456]">We Got You.</span>
           </h1>
