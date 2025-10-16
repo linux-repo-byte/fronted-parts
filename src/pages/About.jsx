@@ -8,14 +8,14 @@ const About = () => {
   const [itemsPerPage, setItemsPerPage] = useState(4);
   
   const teamMembers = [
-    { name: 'Name 1', role: 'Founder', image: require('../assets/founder.png') },
+    { name: 'Raag KC', role: 'Founder', image: require('../assets/founder.png') },
     { name: 'Aayush Bartaula', role: 'Developer', image: require('../assets/aayush.jpeg') },
-    { name: 'Name 3', role: 'Head Chef', image: require('../assets/chef.png') },
-    { name: 'Name 4', role: 'Operations Manager', image: require('../assets/customer.png') },
+    { name: 'Milli Rai', role: 'Digital Marketing', image: require('../assets/chef.png') },
+    { name: 'Krimila Kusle Thapa', role: 'Graphics Designer', image: require('../assets/customer.png') },
     { name: 'Bipul Thapa', role: 'Product Developer', image: require('../assets/bipul.jpeg') },
-    { name: 'Name 6', role: 'Customer Service', image: require('../assets/marketing.png') },
-    { name: 'Name 7', role: 'Marketing', image: require('../assets/chef.png') },
-    { name: 'Name 8', role: 'Quality Assurance', image: require('../assets/customer.png') }
+    { name: 'Ureka Gautam', role: 'Developer', image: require('../assets/marketing.png') },
+    { name: 'Head Chef', role: 'Head Chef', image: require('../assets/chef.png') },
+    { name: 'Shahil Hussain', role: 'Developer', image: require('../assets/customer.png') }
   ];
 
   // Update items per page based on window size
@@ -62,41 +62,50 @@ const About = () => {
     <div className="relative min-h-screen bg-white">
       <Navbar />
       
-      {/* Hero Section - background only; content above overlay */}
-      <div className="relative z-0 bg-[#FFF4D6] py-24 min-h-[60vh] flex items-center overflow-hidden">
-        {/* Section overlay images (sit above background) */}
-        <div className="pointer-events-none select-none absolute inset-0">
-          <img
-            src={require('../assets/Cutting board with pear and utensils.png')}
-            alt="Cutting board with pear"
-            className="absolute -left-[1vw] top-[-5vw] h-full w-auto scale-[1.4] rotate-[4deg] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100"
-          />
-          <img
-            src={require('../assets/Avocado with vegetables and basil.png')}
-            alt="Avocado with vegetables"
-            className="absolute -right-[1vw] top-[2vw] h-full w-auto scale-[1.5] rotate-[3deg] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100"
-          />
-        </div>
+      {/* Hero Section */}
+<div
+  className="relative z-0 bg-[#FFF4D6] py-24 min-h-[60vh] flex items-center overflow-hidden"
+  style={{
+    backgroundImage: `url(${require('../assets/pattern.png')})`,
+    backgroundSize: '300px 300px',
+    backgroundRepeat: 'repeat',
+    backgroundPosition: 'center',
+  }}
+>
+  {/* Section overlay images */}
+  <div className="pointer-events-none select-none absolute inset-0">
+    <img
+      src={require('../assets/Cutting board with pear and utensils.png')}
+      alt="Cutting board with pear"
+      className="absolute -left-[1vw] top-[-5vw] h-full w-auto scale-[1.4] rotate-[4deg] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100 hidden lg:block"
+    />
+    <img
+      src={require('../assets/Avocado with vegetables and basil.png')}
+      alt="Avocado with vegetables"
+      className="absolute -right-[1vw] top-[2vw] h-full w-auto scale-[1.5] rotate-[3deg] hidden md:block"
+    />
+  </div>
 
-        {/* Blurred text panel for readability */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 boba-font">
-            About Too Lazy
-            <span className="text-gray-900"> To Buy </span>
-          </h1>
-          <div className="mx-auto inline-block bg-white/5 backdrop-blur-md rounded-[2rem] px-8 py-4 mb-6">
-            <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
-              We're here for the lazy ones who still want delicious meals without the hassle of what to cook and how to.
-            </p>
-          </div>
-          <a
-            href="/products"
-            className="inline-block bg-[#FFB380] hover:bg-[#FF9F5C] text-white px-10 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg"
-          >
-            Order Now
-          </a>
-        </div>
-      </div>
+  {/* Blurred text panel for readability */}
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center justify-center">
+    <div className="w-full bg-white/50 backdrop-blur-xl rounded-[2rem] px-6 sm:px-20 py-10 mb-6 shadow-sm">
+      <h1 className="text-6xl font-bold text-gray-900 mb-4 boba-font leading-tight break-words">
+  About Too Lazy To Buy
+</h1>
+
+      <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        We're here for the lazy ones who still want delicious meals without the hassle of what to cook and how to.
+      </p>
+    </div>
+    <a
+      href="/products"
+      className="inline-block bg-[#FFB380] hover:bg-[#FF9F5C] text-white px-10  py-4  rounded-full text-base sm:text-lg font-bold transition-all transform hover:scale-105 shadow-lg mt-2"
+    >
+      Order Now
+    </a>
+  </div>
+</div>
+
 
       {/* Story Section */}
       <div className="relative z-0 bg-white py-20 overflow-hidden">
@@ -104,7 +113,7 @@ const About = () => {
         <img
           src={require('../assets/ramen.png')}
           alt="Framed citrus"
-          className="pointer-events-none select-none absolute right-[0.5vw] top-[-5vw] h-full w-auto scale-[1.4] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-95"
+          className="pointer-events-none select-none absolute right-[0.5vw] top-[-5vw] h-full w-auto scale-[1.4] hidden md:block"
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -116,10 +125,10 @@ const About = () => {
               />
             </div>
             <div className="relative">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 boba-font">
-                Our Story
-              </h2>
-              <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6">
+              <div className="bg-white/50 backdrop-blur-md rounded-[2rem] p-6 sm:bg-white/50 sm:backdrop-blur-lg md:bg-white/50 md:backdrop-blur-lg">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4 boba-font">
+                  Our Story
+                </h2>
                 <p className="text-lg text-gray-700 mb-6">
                   Founded in 2025, Too Lazy to Buy started as a simple idea: What if cooking was so easy, even the laziest person could do it? We pre-prep everything so you can enjoy fresh, delicious meals in minutes.
                 </p>
@@ -133,53 +142,46 @@ const About = () => {
       </div>
 
       {/* Values Section */}
-      <div className="relative z-0 bg-[#FFF4D6] py-24 overflow-hidden">
+      <div className="relative z-0 bg-[#FFF4D6] py-24 overflow-hidden" style={{ backgroundImage: `url(${require('../assets/pattern.png')})`, backgroundSize: '300px 300px', backgroundRepeat: 'repeat', backgroundPosition: 'center' }}>
         {/* Values images above band background */}
         <div className="pointer-events-none select-none absolute inset-0">
           <img
             src={require('../assets/Orange slices with straw.png')}
             alt="Orange slices"
-            className="absolute left-[2vw] top-[-5vw] h-full w-auto scale-[1.3] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100"
+            className="absolute left-[2vw] top-[-5vw] h-full w-auto scale-[1.3] hidden md:block"
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-8 boba-font">
-            Our Lazy Values
-          </h2>
-          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Zap className="w-16 h-16 text-[#A8B456]" strokeWidth={1.5} />
-              </div>
-              <p className="text-2xl font-bold text-gray-900 boba-font">
-                Quick & Easy
-              </p>
-              <p className="text-gray-600 mt-2">
-                Meals ready in under 15 minutes.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Sparkles className="w-16 h-16 text-[#A8B456]" strokeWidth={1.5} />
-              </div>
-              <p className="text-2xl font-bold text-gray-900 boba-font">
-                Fresh & Tasty
-              </p>
-              <p className="text-gray-600 mt-2">
-                Quality ingredients, no compromises.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Users className="w-16 h-16 text-[#A8B456]" strokeWidth={1.5} />
-              </div>
-              <p className="text-2xl font-bold text-gray-900 boba-font">
-                For Everyone
-              </p>
-              <p className="text-gray-600 mt-2">
-                Options for all diets and preferences.
-              </p>
-            </div>
+          <div className="bg-white/50 backdrop-blur-md rounded-[2rem] px-8 py-4 mb-8 sm:bg-white/50 sm:backdrop-blur-lg md:bg-white/50 md:backdrop-blur-lg">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-8 boba-font">
+              Our Lazy Values
+            </h2>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-10 mt-10">
+  <div className="text-center flex-1 min-w-[200px] max-w-[300px]">
+    <div className="flex justify-center mb-4">
+      <Zap className="w-16 h-16 text-[#A8B456]" strokeWidth={1.5} />
+    </div>
+    <p className="text-2xl font-bold text-gray-900 boba-font">Quick & Easy</p>
+    <p className="text-gray-600 mt-2">Meals ready in under 15 minutes.</p>
+  </div>
+
+  <div className="text-center flex-1 min-w-[200px] max-w-[300px]">
+    <div className="flex justify-center mb-4">
+      <Sparkles className="w-16 h-16 text-[#A8B456]" strokeWidth={1.5} />
+    </div>
+    <p className="text-2xl font-bold text-gray-900 boba-font">Fresh & Tasty</p>
+    <p className="text-gray-600 mt-2">Quality ingredients, no compromises.</p>
+  </div>
+
+  <div className="text-center flex-1 min-w-[200px] max-w-[300px]">
+    <div className="flex justify-center mb-4">
+      <Users className="w-16 h-16 text-[#A8B456]" strokeWidth={1.5} />
+    </div>
+    <p className="text-2xl font-bold text-gray-900 boba-font">For Everyone</p>
+    <p className="text-gray-600 mt-2">Options for all diets and preferences.</p>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
@@ -187,11 +189,11 @@ const About = () => {
       {/* Team Section */}
       <div className="relative z-0 bg-white py-24 overflow-hidden">
         {/* Team decorative big greens pushed to right */}
-        <img
+        {/* <img
           src={require('../assets/Green beans arrangement.png')}
           alt="Greens"
-          className="pointer-events-none select-none absolute right-[4vw] top-0 h-full w-auto scale-[1.4] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-90"
-        />
+          className="pointer-events-none select-none absolute right-[4vw] top-0 h-full w-auto scale-[1.4] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100 hidden lg:block"
+        /> */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12 boba-font">
             Meet the Lazy Team
@@ -260,34 +262,34 @@ const About = () => {
       </div>
 
       {/* Final CTA */}
-      <div className="relative z-0 bg-[#FFF4D6] py-28 overflow-hidden">
+      <div className="relative z-0 bg-[#FFF4D6] py-28 overflow-hidden" style={{ backgroundImage: `url(${require('../assets/pattern.png')})`, backgroundSize: '300px 300px', backgroundRepeat: 'repeat', backgroundPosition: 'center' }}>
         {/* Final CTA decorative assets (swapped sides, scaled, no rotation) */}
         <img
           src={require('../assets/pexels-jj-jordan-44924743-9534911.png')}
           alt="Waffle with berries"
-          className="pointer-events-none select-none absolute left-[5vw] bottom-[-1vw] h-full w-auto scale-[1.3] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100"
+          className="pointer-events-none select-none absolute left-[5vw] bottom-[-1vw] h-full w-auto scale-[1.3] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100 hidden lg:block"
         />
         <img
           src={require('../assets/pexels-jj-jordan-44924743-7701712.png')}
           alt="Fruit splash"
-          className="pointer-events-none select-none absolute right-[-1vw] bottom-[-4vw] h-full w-auto scale-[1.4] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100"
+          className="pointer-events-none select-none absolute right-[-1vw] bottom-[-4vw] h-full w-auto scale-[1.4] hidden md:block"
         />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 boba-font">
-            Join the Lazy Revolution
-          </h2>
-          <div className="mx-auto inline-block bg-white/5 backdrop-blur-md rounded-[2rem] px-8 py-4 mb-8">
+          <div className="mx-auto inline-block bg-white/50 backdrop-blur-md rounded-[2rem] px-8 py-4 mb-8 sm:bg-white/50 sm:backdrop-blur-lg md:bg-white/50 md:backdrop-blur-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 boba-font">
+              Join the Lazy Revolution
+            </h2>
             <p className="text-xl text-gray-900">
               Ready to eat without the effort?
             </p>
           </div>
-          <a
-            href="/contact"
-            className="inline-block bg-[#FFB380] hover:bg-[#FF9F5C] text-white px-10 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg"
-          >
-            Contact Us
-          </a>
         </div>
+        <a
+          href="/contact"
+          className="inline-block bg-[#FFB380] hover:bg-[#FF9F5C] text-white px-10 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg mt-4"
+        >
+          Contact Us
+        </a>
       </div>
     
 
