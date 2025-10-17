@@ -8,13 +8,12 @@ const About = () => {
   const [itemsPerPage, setItemsPerPage] = useState(4);
   
   const teamMembers = [
-    { name: 'Raag KC', role: 'Founder', image: require('../assets/founder.png') },
+    { name: 'Raag KC', role: 'Curator', image: require('../assets/founder.png') },
     { name: 'Aayush Bartaula', role: 'Developer', image: require('../assets/aayush.jpeg') },
-    { name: 'Milli Rai', role: 'Digital Marketing', image: require('../assets/chef.png') },
-    { name: 'Krimila Kusle Thapa', role: 'Graphics Designer', image: require('../assets/customer.png') },
+    { name: 'Milli Rai', role: 'Digital Marketing', image: require('../assets/marketing.png') },
+    { name: 'Krimila Kusle Thapa', role: 'Graphics Designer', image: require('../assets/marketing.png') },
     { name: 'Bipul Thapa', role: 'Product Developer', image: require('../assets/bipul.jpeg') },
     { name: 'Ureka Gautam', role: 'Developer', image: require('../assets/marketing.png') },
-    { name: 'Head Chef', role: 'Head Chef', image: require('../assets/chef.png') },
     { name: 'Shahil Hussain', role: 'Developer', image: require('../assets/customer.png') }
   ];
 
@@ -67,7 +66,7 @@ const About = () => {
   className="relative z-0 bg-[#FFF4D6] py-24 min-h-[60vh] flex items-center overflow-hidden"
   style={{
     backgroundImage: `url(${require('../assets/pattern.png')})`,
-    backgroundSize: '300px 300px',
+    backgroundSize: '1200px 1200px',
     backgroundRepeat: 'repeat',
     backgroundPosition: 'center',
   }}
@@ -108,7 +107,7 @@ const About = () => {
 
 
       {/* Story Section */}
-      <div className="relative z-0 bg-white py-20 overflow-hidden">
+      <div className="relative z-0 bg-[#FFF4D6] py-20 overflow-hidden">
         {/* Right framed citrus above background */}
         <img
           src={require('../assets/ramen.png')}
@@ -142,7 +141,7 @@ const About = () => {
       </div>
 
       {/* Values Section */}
-      <div className="relative z-0 bg-[#FFF4D6] py-24 overflow-hidden" style={{ backgroundImage: `url(${require('../assets/pattern.png')})`, backgroundSize: '300px 300px', backgroundRepeat: 'repeat', backgroundPosition: 'center' }}>
+      <div className="relative z-0 bg-[#FFF4D6] py-24 overflow-hidden" style={{ backgroundImage: `url(${require('../assets/pattern.png')})`, backgroundSize: '1200px 1200px', backgroundRepeat: 'repeat', backgroundPosition: 'center' }}>
         {/* Values images above band background */}
         <div className="pointer-events-none select-none absolute inset-0">
           <img
@@ -187,7 +186,7 @@ const About = () => {
       </div>
 
       {/* Team Section */}
-      <div className="relative z-0 bg-white py-24 overflow-hidden">
+      <div className="relative z-0 bg-[#FFF4D6] py-24 overflow-hidden">
         {/* Team decorative big greens pushed to right */}
         {/* <img
           src={require('../assets/Green beans arrangement.png')}
@@ -262,17 +261,17 @@ const About = () => {
       </div>
 
       {/* Final CTA */}
-      <div className="relative z-0 bg-[#FFF4D6] py-28 overflow-hidden" style={{ backgroundImage: `url(${require('../assets/pattern.png')})`, backgroundSize: '300px 300px', backgroundRepeat: 'repeat', backgroundPosition: 'center' }}>
+      <div className="relative z-0 bg-[#FFF4D6] py-28 overflow-hidden" style={{ backgroundImage: `url(${require('../assets/pattern.png')})`, backgroundSize: '1200px 1200px', backgroundRepeat: 'repeat', backgroundPosition: 'center' }}>
         {/* Final CTA decorative assets (swapped sides, scaled, no rotation) */}
         <img
           src={require('../assets/pexels-jj-jordan-44924743-9534911.png')}
           alt="Waffle with berries"
-          className="pointer-events-none select-none absolute left-[5vw] bottom-[-1vw] h-full w-auto scale-[1.3] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100 hidden lg:block"
+          className="pointer-events-none select-none absolute left-[5vw] bottom-[-1vw] h-full w-auto scale-[1] transition-opacity duration-700 ease-out opacity-0 sm:opacity-30 md:opacity-60 lg:opacity-100 hidden lg:block"
         />
         <img
           src={require('../assets/pexels-jj-jordan-44924743-7701712.png')}
           alt="Fruit splash"
-          className="pointer-events-none select-none absolute right-[-1vw] bottom-[-4vw] h-full w-auto scale-[1.4] hidden md:block"
+          className="pointer-events-none select-none absolute right-[3vw] bottom-[-4vw] h-full w-auto scale-[1.2] hidden md:block"
         />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <div className="mx-auto inline-block bg-white/50 backdrop-blur-md rounded-[2rem] px-8 py-4 mb-8 sm:bg-white/50 sm:backdrop-blur-lg md:bg-white/50 md:backdrop-blur-lg">
@@ -283,13 +282,14 @@ const About = () => {
               Ready to eat without the effort?
             </p>
           </div>
-        </div>
-        <a
+          <br />
+          <a
           href="/contact"
           className="inline-block bg-[#FFB380] hover:bg-[#FF9F5C] text-white px-10 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg mt-4"
         >
           Contact Us
         </a>
+        </div>
       </div>
     
 
